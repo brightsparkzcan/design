@@ -27,4 +27,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./storybook/public # replace 'storybook/public' with your Storybook build output directory
+        publish_dir: ./storybook-static # replace 'storybook/public' with your Storybook build output directory

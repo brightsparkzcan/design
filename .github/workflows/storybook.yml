@@ -17,9 +17,6 @@ jobs:
       with:
         node-version: 14 
 
-    - name: Move to Storybook directory
-      run: cd storybook # replace 'storybook' with your Storybook directory name
-
     - name: Install Node modules
       run: npm ci # or 'yarn install --frozen-lockfile' if using Yarn
 

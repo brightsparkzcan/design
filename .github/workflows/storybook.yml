@@ -1,0 +1,33 @@
+name: Build and Deploy Storybook to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14 
+
+    - name: Move to Storybook directory
+      run: cd storybook # replace 'storybook' with your Storybook directory name
+
+    - name: Install Node modules
+      run: npm ci # or 'yarn install --frozen-lockfile' if using Yarn
+
+    - name: Build Storybook
+      run: npm run build-storybook # or 'yarn build-storybook' if using Yarn
+
+    - name: Deploy Storybook to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./storybook/public # replace 'storybook/public' with your Storybook build output directory

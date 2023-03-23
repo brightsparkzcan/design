@@ -26,5 +26,5 @@ jobs:
     - name: Deploy Storybook to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.ACTIONS_BOT }}
         publish_dir: ./storybook-static # replace 'storybook/public' with your Storybook build output directory

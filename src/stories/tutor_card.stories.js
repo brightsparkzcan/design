@@ -10,6 +10,8 @@ export default {
     tutor_name: { control: 'text', defaultValue:'Anjelica Shrestha' }, 
     date_format: { control: 'text', defaultValue:'mmm dd yyyy' }, 
     availability: { control: 'text', defaultValue:'Mornings, Afternoons, Evenings, Weekends' },
+    hasCar:{ control: 'boolean', defaultValue:true },
+    gender:{control:{type:"select", options:["m","f"]}, defaultValue:'m'},
   },
 };
 

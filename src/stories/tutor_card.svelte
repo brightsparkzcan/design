@@ -26,6 +26,15 @@
 		const isExpanded = getComputedStyle(animationTarget).height !== '0px';
 
 
+		setTimeout(() => {
+			if(isExpanded){
+				animationTarget.style.overflow = 'visible';
+			}else {
+				animationTarget.style.overflow = 'hidden';
+			}
+		}, 500);
+
+
 		if(isExpanded){
 			animationTarget.style.height = '0px';
 			dropdown.classList.remove('spin');
@@ -77,15 +86,17 @@
 		<div class="page">
 			<div class="container">
 				<div class="flex flex-col shadow-lg rounded-lg border border-slate-600 animation-container">
-					<div class="card-header flex flex-row p-4 items-end rounded-t-lg justify-between items-baseline" style="background-color:{theme}">
+					<div class="card-header flex flex-row p-4 items-end rounded-t-lg justify-between md:justify-around items-center" style="background-color:{theme}">
 						<div class="w-12 h-12 bg-white">
 							<img src="https://ucarecdn.com/de23362b-6734-4091-bde4-74385130f294/-/crop/2268x2270/0,1040/-/preview/" alt="Avatar" class="w-12 h-12">
 						</div>
-						<div class="text-white font-bold text-md text-base md:text-3xl">{tutor_name}</div>
-						<div class="text-white font-bold text-sm font-bold">{model_date}</div>
+						<div class="flex flex-col items-end md:flex-row md:justify-between  md:items-baseline flex-grow justify-end">
+							<div class="text-white font-bold text-md text-base md:text-3xl md:pl-5">{tutor_name}</div>
+							<div class="text-white font-bold text-sm font-bold">{model_date}</div>
+						</div>
 					</div>
 
-					<div class="grid grid-cols-2 grid-flow-row gap-4 bg-white p-1 rounded-b-lg m-auto md:w-11/12 py-4" style="color:{theme}">
+					<div class="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-1 md:gap-4 bg-white p-1 rounded-b-lg m-auto md:w-11/12 py-4" style="color:{theme}">
 							<table class="">
 								<tr>
 									<td class="align-middle"><span class="material-icons {carColor}">{carModel}</span></td>
@@ -101,20 +112,33 @@
 								</tr>
 							</table>
 
-							<table>
+							<table class="hidden md:table">
 								<tr>
 									<td class="text-left md:text-center"><i class="material-icons text-slate-400">hourglass_bottom</i></td>
-									<td class="w-full pl-2 font-bold">10.5</td>
+									<td class="w-full pl-2 font-bold">10.5 hr</td>
 								</tr>
 								<tr>
 									<td class="text-left md:text-center"><i class="material-icons text-yellow-500">workspace_premium</i></td>
-									<td class="w-full pl-2 font-bold">10.5</td>
+									<td class="w-full pl-2 font-bold">10.5 hr</td>
 								</tr>
 								<tr>
 									<td class="font-bold">Created</td>
 									<td class="w-full pl-2">{model_date}</td>
 								</tr>
 							</table>
+							
+							<div class="md:hidden bg-gray-100 rounded p-1">
+								<table class="w-full ">
+									<tr>
+										<td class="md:text-center"><i class="material-icons text-slate-400 align-middle">hourglass_bottom</i> 10.5 hr</td>
+										<td class=""><i class="material-icons text-yellow-500 align-middle">workspace_premium</i> 10.5 hr</td>
+									</tr>
+									<tr>
+										<td class="">Created</td>
+										<td class="">{model_date}</td>
+									</tr>
+								</table>
+							</div>
 
 
 							<div class="">
@@ -131,6 +155,7 @@
 							</div>
 
 							<div>
+								<div class="text-sm font-bold uppercase text-slate-400 bg-slate-700 text-white p-1">Additional Info</div>
 								<table class="col-span-2 md:col-span-1">
 									<tr>
 										<td class="material-icons px-2">phone</td>
@@ -160,7 +185,7 @@
 							
 					</div>
 					<!-- Divider -->
-					<div class="flex flex-row justify-end pb-2 pr-2 text-slate-800">
+					<div class="flex flex-row justify-end pb-1 pr-2 text-slate-800">
 						<span on:click={toggle} on:keydown={toggle} class="dropdown material-icons cursor-pointer select-none" >expand_circle_down</span>
 					</div>
 					<!-- Second Section -->

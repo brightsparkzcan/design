@@ -120,16 +120,18 @@
 									<td class="align-middle"><span class="material-icons text-red-500">map</span></td>
 									<td class="align-baseline font-bold text-sm">35 Thorndale St N, Hamilton, ON L8S 3K5, Canada</td>
 								</tr>
-								<tr>
-									<td class="align-top">
-										<span class="">
-											<i class="material-icons text-slate-600">
-												{#if tutorOnline}wifi{:else}wifi_off{/if}
-											</i>
-										</span>
-									</td>
-									<td class="align-base font-bold text-sm">{#if tutorOnline} Online {:else} Offline {/if}</td>
-								</tr>
+								{#if tutorOnline}
+									<tr>
+										<td class="align-top">
+											<span class="">
+												<i class="material-icons text-slate-600">
+													wifi
+												</i>
+											</span>
+										</td>
+										<td class="align-base font-bold text-sm">{#if tutorOnline} Online {:else} Offline {/if}</td>
+									</tr>
+								{/if}
 								<tr>
 									<td class="align-top"><span class="material-icons {genderColor}">{genderDisplay}</span></td>
 									<td class="align-top"></td>

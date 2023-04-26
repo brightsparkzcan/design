@@ -3,12 +3,15 @@
 	export let tutor_name;
 	export let date_format;
 	import dateformat from "dateformat";
+	export let tutorStatus;
+	export let tutorOnline;
 
 	let current_date = new Date();
 
 	export let hasCar = true;
 	export let gender = "m";
 	export let availability = "Mornings, Afternoons, Evenings, Weekends";
+	export let tutorPreference;
 
 
 	$: genderDisplay = gender=='m' ? 'male':'female'
@@ -99,12 +102,33 @@
 					<div class="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-1 md:gap-4 bg-white p-1 rounded-b-lg m-auto md:w-11/12 py-4" style="color:{theme}">
 							<table class="">
 								<tr>
+									<td class="align-bottom"><i class="material-icons text-slate-600">account_box</i></td>
+									<td class="align-base font-bold text-sm align-middle"> {tutorStatus}</td>
+								</tr>
+								<tr>
 									<td class="align-middle"><span class="material-icons {carColor}">{carModel}</span></td>
-									<td class="align-baseline font-bold text-sm">1km</td>
+									<td class="align-baseline font-bold text-sm align-middle">1km {#if tutorPreference!='N/A'} 
+											{#if tutorPreference.toLowerCase() == "online only"}
+												<span class="text-xs text-slate-400 lowercase">({tutorPreference})</span>
+											{:else}
+												<span class="text-xs text-slate-400 lowercase">(Up To {tutorPreference})</span> 
+											{/if}
+										{/if}
+									</td>
 								</tr>
 								<tr>
 									<td class="align-middle"><span class="material-icons text-red-500">map</span></td>
 									<td class="align-baseline font-bold text-sm">35 Thorndale St N, Hamilton, ON L8S 3K5, Canada</td>
+								</tr>
+								<tr>
+									<td class="align-top">
+										<span class="">
+											<i class="material-icons text-slate-600">
+												{#if tutorOnline}wifi{:else}wifi_off{/if}
+											</i>
+										</span>
+									</td>
+									<td class="align-base font-bold text-sm">{#if tutorOnline} Online {:else} Offline {/if}</td>
 								</tr>
 								<tr>
 									<td class="align-top"><span class="material-icons {genderColor}">{genderDisplay}</span></td>

@@ -94,10 +94,10 @@
 						</div>
 						<div class="flex flex-col items-end md:flex-row md:justify-between  md:items-baseline flex-grow justify-end">
 							<div class="text-white font-bold text-md text-base md:text-3xl md:pl-5 text-right sm:text-left">{tutor_name} <span class="text-sm block sm:inline">({tutorStatus})</span></div>
-							<span class="material-icons {genderColor}">{genderDisplay}</span>
 						</div>
 					</div>
 					<div class="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-1 md:gap-4 bg-white p-1 rounded-b-lg m-auto md:w-11/12 py-4" style="color:{theme}">
+
 							<table class="">
 								<tr>
 									<td class="align-middle">
@@ -129,6 +129,9 @@
 									</tr>
 								{/if}
 							</table>
+
+
+
 							<table class="hidden md:table">
 								<tr>
 									<td class="text-left md:text-center"><span class="material-icons {genderColor}">{genderDisplay}</span></td>
@@ -147,6 +150,9 @@
 									<td class="align-baseline font-bold text-sm">35 Thorndale St N, Hamilton, ON L8S 3K5, Canada</td>
 								</tr>
 							</table>
+
+
+							
 							<div class="md:hidden bg-gray-100 rounded p-1">
 								<table class="w-full ">
 									<tr>
@@ -174,22 +180,20 @@
 								</ul>
 							</div>
 
-							<div>
-								<div class="text-sm font-bold uppercase text-slate-400 bg-slate-700 text-white p-1">Additional Info</div>
-								<table class="col-span-2 md:col-span-1">
-									<tr>
-										<td class="material-icons px-2">phone</td>
-										<td>(705) 288-3921</td>
-									</tr>
-									<tr>
-										<td class="material-icons px-2">email</td>
-										<td>divyanshbansal.db@gmail.com</td>
-									</tr>
-									<tr>
-										<td class="material-icons px-2">schedule</td>
-										<td>Evenings, Weekends (I Will Only Be Able To Tutor Online From December To End Of January.)</td>
-									</tr>
-								</table>
+							<div class="">
+								<div class="text-sm font-bold uppercase text-slate-400 bg-slate-700 text-white p-1">Post-Secondary Education</div>
+								<ul class="list-disc pl-5">
+									<li>
+										<div>
+											<div class="text-sm font-bold uppercase">
+												Medical: Medicine / Nursing / Dentistry
+											</div>
+											<div class="text-sm capitalize">
+												Bachelors of Health Sciences (BHSc Honours)/ Diploma
+											</div>
+										</div>
+									</li>
+								</ul>
 							</div>
 							<!-- <div class="">
 								<div class="text-md font-bold uppercase"> Tertiary Education </div>
@@ -230,22 +234,8 @@
 								</table>
 							</div>
 
+
 							
-							<div class="">
-								<div class="text-sm font-bold uppercase text-slate-400 bg-slate-700 text-white p-1">Post-Secondary Education</div>
-								<ul class="list-disc pl-5">
-									<li>
-										<div>
-											<div class="text-sm font-bold uppercase">
-												Medical: Medicine / Nursing / Dentistry
-											</div>
-											<div class="text-sm capitalize">
-												Bachelors of Health Sciences (BHSc Honours)/ Diploma
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
 
 							<div class="">
 								<div class="text-sm font-sm font-bold uppercase text-slate-400 bg-slate-700 text-white p-1"> Additional Information </div>

@@ -133,10 +133,7 @@
 
 
 							<table class="hidden md:table">
-								<tr>
-									<td class="text-left md:text-center"><span class="material-icons {genderColor}">{genderDisplay}</span></td>
-									<td class="align-top"></td>
-								</tr>
+								
 								<tr>
 									<td class="text-left md:text-center"><i class="material-icons text-slate-400">hourglass_bottom</i></td>
 									<td class="w-full pl-2 font-bold">10.5 hr</td>
@@ -152,7 +149,7 @@
 							</table>
 
 
-							
+
 							<div class="md:hidden bg-gray-100 rounded p-1">
 								<table class="w-full ">
 									<tr>
@@ -242,6 +239,9 @@
 									<div class="font-bold text-sm capitalize">Availability</div>
 									<div class="text-sm">Evenings, Weekends (I Will Only Be Able To Tutor Online From December To End Of January.)</div>
 								<div class="flex flex-col"></div> 
+								<div class="py-2">
+									<div class="text-left"><span class="material-icons {genderColor}">{genderDisplay}</span></div>
+								</div>
 							</div>
 						</div>
 					</div>

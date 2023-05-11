@@ -211,6 +211,26 @@
 					<!-- Second Section -->
 					<div class="animation-target">
 						<div class="grid grid-cols-1 md:grid-cols-2 p-3 grid-flow-row gap-4 bg-white rounded-b-lg m-auto md:w-11/12" style="color:{theme}">
+
+							<div>
+								<div class="text-sm font-bold uppercase text-slate-400 bg-slate-700 text-white p-1">Additional Info</div>
+								<table class="col-span-2 md:col-span-1">
+									<tr>
+										<td class="material-icons px-2">phone</td>
+										<td>(705) 288-3921</td>
+									</tr>
+									<tr>
+										<td class="material-icons px-2">email</td>
+										<td>divyanshbansal.db@gmail.com</td>
+									</tr>
+									<tr>
+										<td class="material-icons px-2">schedule</td>
+										<td>Evenings, Weekends (I Will Only Be Able To Tutor Online From December To End Of January.)</td>
+									</tr>
+								</table>
+							</div>
+
+							
 							<div class="">
 								<div class="text-sm font-bold uppercase text-slate-400 bg-slate-700 text-white p-1">Post-Secondary Education</div>
 								<ul class="list-disc pl-5">

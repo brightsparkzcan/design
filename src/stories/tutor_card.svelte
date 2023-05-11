@@ -10,7 +10,6 @@
 
 	export let hasCar = true;
 	export let gender = "m";
-	export let availability = "Mornings, Afternoons, Evenings, Weekends";
 	export let tutorPreference;
 
 
@@ -94,20 +93,21 @@
 							<img src="https://ucarecdn.com/de23362b-6734-4091-bde4-74385130f294/-/crop/2268x2270/0,1040/-/preview/" alt="Avatar" class="w-12 h-12">
 						</div>
 						<div class="flex flex-col items-end md:flex-row md:justify-between  md:items-baseline flex-grow justify-end">
-							<div class="text-white font-bold text-md text-base md:text-3xl md:pl-5">{tutor_name}</div>
-							<div class="text-white font-bold text-sm font-bold">{model_date}</div>
+							<div class="text-white font-bold text-md text-base md:text-3xl md:pl-5 text-right sm:text-left">{tutor_name} <span class="text-sm block sm:inline">({tutorStatus})</span></div>
+							<span class="material-icons {genderColor}">{genderDisplay}</span>
 						</div>
 					</div>
-
 					<div class="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-1 md:gap-4 bg-white p-1 rounded-b-lg m-auto md:w-11/12 py-4" style="color:{theme}">
 							<table class="">
 								<tr>
-									<td class="align-bottom"><i class="material-icons text-slate-600">account_box</i></td>
-									<td class="align-base font-bold text-sm align-middle"> {tutorStatus}</td>
+									<td class="align-middle">
+										<span class="material-icons text-green-600">schedule</span>
+									</td>
+									<td class="align-middle font-bold text-sm">{model_date}</td>
 								</tr>
 								<tr>
 									<td class="align-middle"><span class="material-icons {carColor}">{carModel}</span></td>
-									<td class="align-baseline font-bold text-sm align-middle">1km {#if tutorPreference!='N/A'} 
+									<td class="align-middle font-bold text-sm align-middle">1km {#if tutorPreference!='N/A'} 
 											{#if tutorPreference.toLowerCase() == "online only"}
 												<span class="text-xs text-slate-400 lowercase">({tutorPreference})</span>
 											{:else}
@@ -116,29 +116,24 @@
 										{/if}
 									</td>
 								</tr>
-								<tr>
-									<td class="align-middle"><span class="material-icons text-red-500">map</span></td>
-									<td class="align-baseline font-bold text-sm">35 Thorndale St N, Hamilton, ON L8S 3K5, Canada</td>
-								</tr>
 								{#if tutorOnline}
 									<tr>
-										<td class="align-top">
+										<td class="align-middle">
 											<span class="">
 												<i class="material-icons text-slate-600">
 													wifi
 												</i>
 											</span>
 										</td>
-										<td class="align-base font-bold text-sm">{#if tutorOnline} Online {:else} Offline {/if}</td>
+										<td class="align-middle font-bold text-sm">{#if tutorOnline} Online {:else} Offline {/if}</td>
 									</tr>
 								{/if}
+							</table>
+							<table class="hidden md:table">
 								<tr>
-									<td class="align-top"><span class="material-icons {genderColor}">{genderDisplay}</span></td>
+									<td class="text-left md:text-center"><span class="material-icons {genderColor}">{genderDisplay}</span></td>
 									<td class="align-top"></td>
 								</tr>
-							</table>
-
-							<table class="hidden md:table">
 								<tr>
 									<td class="text-left md:text-center"><i class="material-icons text-slate-400">hourglass_bottom</i></td>
 									<td class="w-full pl-2 font-bold">10.5 hr</td>
@@ -148,11 +143,10 @@
 									<td class="w-full pl-2 font-bold">10.5 hr</td>
 								</tr>
 								<tr>
-									<td class="font-bold">Created</td>
-									<td class="w-full pl-2">{model_date}</td>
+									<td class="text-left md:text-center"><span class="material-icons text-red-500">map</span></td>
+									<td class="align-baseline font-bold text-sm">35 Thorndale St N, Hamilton, ON L8S 3K5, Canada</td>
 								</tr>
 							</table>
-							
 							<div class="md:hidden bg-gray-100 rounded p-1">
 								<table class="w-full ">
 									<tr>
